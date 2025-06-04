@@ -28,11 +28,11 @@ jobs:
 
       # instalacao do yarn
       - name: Intalando yarn
-        run: npm install - g yarn
+        run: npm install - g Yarn
 
       # instalacao das pedendências
       - name: Intalando dependências
-        run: yarn
+        run: Yarn
 
       #instalacao do playwright
       - name: Intalando playwright
