@@ -9,9 +9,9 @@ name: 'Execução por Deploy'
 
 on: 
   workflow_run:
-    #workflows: ['Execução Manual']
+    workflows: ['Execução Manual']
     types:
-      #- completed
+      - completed
 
 #trabalhos/tarefas dentro do pipeline = jobs
 jobs:
@@ -53,3 +53,9 @@ jobs:
       # executar os testes e2e
       - name: Executando Testes E2E
         run: yarn run e2e
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: relatorio
+          path: ./playwright-report
