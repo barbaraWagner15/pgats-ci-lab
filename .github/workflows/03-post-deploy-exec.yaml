@@ -9,16 +9,16 @@ name: 'Execução por Deploy'
 
 on: 
   workflow_run:
-    workflows: ['Execução Manual']
+    #workflows: ['Execução Manual']
     types:
-      - completed
+      #- completed
 
 #trabalhos/tarefas dentro do pipeline = jobs
 jobs:
   e2e-tests:  
 
     #maquina que o job vai executar
-    #runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest 
 
     # condicional -if
     # `${ expressao }`
